@@ -1,0 +1,28 @@
+{
+  "name": "@malots/notification",
+  "version": "1.0.0",
+  "description": "notification package",
+  "main": "index.js",
+  "scripts": {
+    "test": "babel-node ./test/tests.js",
+    "start": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/malots/notification.git"
+  },
+  "keywords": [
+    "notification"
+  ],
+  "author": "leovene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/malots/notification/issues"
+  },
+  "homepage": "https://github.com/malots/notification#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "tape": "^4.9.0"
+  }
+}
