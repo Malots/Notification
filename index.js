@@ -33,7 +33,7 @@ var Notification = function () {
     }, {
         key: 'isValid',
         value: function isValid() {
-            return this.count() == 0;
+            return this.countErros() == 0;
         }
     }, {
         key: 'countErros',
