@@ -15,7 +15,7 @@ class Notification {
     }
 
     isValid() {
-        return this.count() == 0;
+        return this.countErros() == 0;
     }
 
     countErros() {
