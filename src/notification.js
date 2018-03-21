@@ -1,12 +1,25 @@
-const properties = new WeakMap();
+const _errors = new Map();
 
 class Notification {
-    constructor() {
-        properties.set(this,{ errors: [] });        
+    add(key,value) {
+        if (!_errors.has(key))
+            _errors.set(key,value);
+    }
+
+    get(key) {
+        return _errors.has(key) ? _errors.get(key) : 'Key not found';
+    }
+
+    getAll() {
+        return Array.from(_errors);
     }
 
     isValid() {
-        return 1 == 0;
+        return this.count() == 0;
+    }
+
+    count() {
+        return _errors.size;
     }
 }
 
