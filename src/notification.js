@@ -1,16 +1,16 @@
 const _errors = new Map();
 
 class Notification {
-    add(key,value) {
+    addError(key,value) {
         if (!_errors.has(key))
             _errors.set(key,value);
     }
 
-    get(key) {
+    getError(key) {
         return _errors.has(key) ? _errors.get(key) : 'Key not found';
     }
 
-    getAll() {
+    getAllErros() {
         return Array.from(_errors);
     }
 
@@ -18,7 +18,7 @@ class Notification {
         return this.count() == 0;
     }
 
-    count() {
+    countErros() {
         return _errors.size;
     }
 }

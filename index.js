@@ -16,18 +16,18 @@ var Notification = function () {
     }
 
     _createClass(Notification, [{
-        key: 'add',
-        value: function add(key, value) {
+        key: 'addError',
+        value: function addError(key, value) {
             if (!_errors.has(key)) _errors.set(key, value);
         }
     }, {
-        key: 'get',
-        value: function get(key) {
+        key: 'getError',
+        value: function getError(key) {
             return _errors.has(key) ? _errors.get(key) : 'Key not found';
         }
     }, {
-        key: 'getAll',
-        value: function getAll() {
+        key: 'getAllErros',
+        value: function getAllErros() {
             return Array.from(_errors);
         }
     }, {
@@ -36,8 +36,8 @@ var Notification = function () {
             return this.count() == 0;
         }
     }, {
-        key: 'count',
-        value: function count() {
+        key: 'countErros',
+        value: function countErros() {
             return _errors.size;
         }
     }]);
