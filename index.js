@@ -28,8 +28,9 @@ var Notification = function () {
     }, {
         key: 'getAllErrors',
         value: function getAllErrors() {
-            var objects = _errors.reduce(function (acc, cur, i) {
-                acc[i] = { error: cur.key, message: cur.value };
+            var result = Array.from(_errors);
+            var objects = result.reduce(function (acc, cur, i) {
+                acc[i] = { error: cur[0], message: cur[1] };
                 return acc;
             }, {});
             return objects;
@@ -37,7 +38,7 @@ var Notification = function () {
     }, {
         key: 'isValid',
         value: function isValid() {
-            return this.countErros() == 0;
+            return this.countErrors() == 0;
         }
     }, {
         key: 'countErrors',
