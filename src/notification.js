@@ -11,18 +11,19 @@ class Notification {
     }
 
     getAllErrors() {
-        const objects = _errors.reduce(function(acc, cur, i) {
-            acc[i] = { error: cur.key, message: cur.value };
+        const result = Array.from(_errors);
+        let objects = result.reduce(function(acc, cur, i) {
+            acc[i] = { error: cur[0], message: cur[1] };
             return acc;
         }, {});
         return objects;
     }
 
     isValid() {
-        return this.countErros() == 0;
+        return this.countErrors() == 0;
     }
 
-    countErros() {
+    countErrors() {
         return _errors.size;
     }
 }

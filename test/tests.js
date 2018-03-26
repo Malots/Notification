@@ -19,7 +19,7 @@ test('Deve adicionar apenas uma chave igual ao erro', function(t) {
     notify.addError('Erro','Valor um');
     notify.addError('Erro','Valor dois');
     notify.addError('Erro','Valor três');
-    t.equal(notify.countErros(),1);
+    t.equal(notify.countErrors(),1);
     t.end();
 });
 
@@ -29,8 +29,8 @@ test('Deve retornar chave não encontrada', function(t) {
     t.end();
 });
 
-test('Deve retornar um array com os erros', function(t) {
+test('Deve retornar um json com os erros', function(t) {
     notify.addError('Erro','Valor');
-    t.isEquivalent(notify.getAllErros(),[['Erro','Valor']]);
+    t.isEquivalent(notify.getAllErrors(),{ 0: { error: 'Erro', message: 'Valor' } });
     t.end();
 });

@@ -28,7 +28,11 @@ var Notification = function () {
     }, {
         key: 'getAllErrors',
         value: function getAllErrors() {
-            return JSON.stringify(_errors);
+            var objects = _errors.reduce(function (acc, cur, i) {
+                acc[i] = { error: cur.key, message: cur.value };
+                return acc;
+            }, {});
+            return objects;
         }
     }, {
         key: 'isValid',
@@ -36,8 +40,8 @@ var Notification = function () {
             return this.countErros() == 0;
         }
     }, {
-        key: 'countErros',
-        value: function countErros() {
+        key: 'countErrors',
+        value: function countErrors() {
             return _errors.size;
         }
     }]);
