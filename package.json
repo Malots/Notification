@@ -1,12 +1,12 @@
 {
   "name": "@malots/notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "notification package",
   "main": "index.js",
   "scripts": {
     "test": "babel-node ./test/tests.js",
     "start": "babel-node index.js",
-    "babel": "npx babel ./src/notification.js --out-file index.js"
+    "build": "npx babel ./src/notification.js --out-file index.js"
   },
   "repository": {
     "type": "git",

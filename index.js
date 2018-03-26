@@ -26,8 +26,8 @@ var Notification = function () {
             return _errors.has(key) ? _errors.get(key) : 'Key not found';
         }
     }, {
-        key: 'getAllErros',
-        value: function getAllErros() {
+        key: 'getAllErrors',
+        value: function getAllErrors() {
             return Array.from(_errors);
         }
     }, {

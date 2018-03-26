@@ -10,7 +10,7 @@ class Notification {
         return _errors.has(key) ? _errors.get(key) : 'Key not found';
     }
 
-    getAllErros() {
+    getAllErrors() {
         return Array.from(_errors);
     }
 
