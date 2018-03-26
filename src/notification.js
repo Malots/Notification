@@ -11,7 +11,11 @@ class Notification {
     }
 
     getAllErrors() {
-        return JSON.stringify(_errors);
+        const objects = _errors.reduce(function(acc, cur, i) {
+            acc[i] = { error: cur.key, message: cur.value };
+            return acc;
+        }, {});
+        return objects;
     }
 
     isValid() {
