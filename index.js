@@ -28,7 +28,7 @@ var Notification = function () {
     }, {
         key: 'getAllErrors',
         value: function getAllErrors() {
-            return Array.from(_errors);
+            return JSON.stringify(_errors);
         }
     }, {
         key: 'isValid',

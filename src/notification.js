@@ -11,7 +11,7 @@ class Notification {
     }
 
     getAllErrors() {
-        return Array.from(_errors);
+        return JSON.stringify(_errors);
     }
 
     isValid() {
