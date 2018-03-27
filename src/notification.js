@@ -1,6 +1,9 @@
 const _errors = new Map();
 
 class Notification {
+    constructor() {
+        _errors.clear();
+    }
     addError(key,value) {
         if (!_errors.has(key))
             _errors.set(key,value);
