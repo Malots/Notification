@@ -1,8 +1,8 @@
-const _errors = new Map();
+let _errors;
 
 class Notification {
     constructor() {
-        _errors.clear();
+        _errors = new Map();
     }
     addError(key,value) {
         if (!_errors.has(key))
