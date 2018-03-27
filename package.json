@@ -1,6 +1,6 @@
 {
   "name": "@malots/notification",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "notification package",
   "main": "index.js",
   "scripts": {

@@ -1,20 +1,18 @@
-let _errors;
-
 class Notification {
     constructor() {
-        _errors = new Map();
+        this._errors = new Map();
     }
     addError(key,value) {
-        if (!_errors.has(key))
-            _errors.set(key,value);
+        if (!this._errors.has(key))
+            this._errors.set(key,value);
     }
 
     getError(key) {
-        return _errors.has(key) ? _errors.get(key) : 'Key not found';
+        return this._errors.has(key) ? this._errors.get(key) : 'Key not found';
     }
 
     getAllErrors() {
-        const result = Array.from(_errors);
+        const result = Array.from(this._errors);
         let objects = result.reduce(function(acc, cur, i) {
             acc[i] = { error: cur[0], message: cur[1] };
             return acc;
@@ -27,7 +25,7 @@ class Notification {
     }
 
     countErrors() {
-        return _errors.size;
+        return this._errors.size;
     }
 }
 
