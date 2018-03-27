@@ -8,27 +8,27 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _errors = new Map();
-
 var Notification = function () {
     function Notification() {
         _classCallCheck(this, Notification);
+
+        this._errors = new Map();
     }
 
     _createClass(Notification, [{
         key: 'addError',
         value: function addError(key, value) {
-            if (!_errors.has(key)) _errors.set(key, value);
+            if (!this._errors.has(key)) this._errors.set(key, value);
         }
     }, {
         key: 'getError',
         value: function getError(key) {
-            return _errors.has(key) ? _errors.get(key) : 'Key not found';
+            return this._errors.has(key) ? this._errors.get(key) : 'Key not found';
         }
     }, {
         key: 'getAllErrors',
         value: function getAllErrors() {
-            var result = Array.from(_errors);
+            var result = Array.from(this._errors);
             var objects = result.reduce(function (acc, cur, i) {
                 acc[i] = { error: cur[0], message: cur[1] };
                 return acc;
@@ -43,7 +43,7 @@ var Notification = function () {
     }, {
         key: 'countErrors',
         value: function countErrors() {
-            return _errors.size;
+            return this._errors.size;
         }
     }]);
 
