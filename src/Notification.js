@@ -1,18 +1,23 @@
+'use strict';
+
+let symbolErrors = Symbol('errors');
+
 class Notification {
     constructor() {
-        this._errors = new Map();
+        this[symbolErrors] = new Map();
     }
+
     addError(key,value) {
-        if (!this._errors.has(key))
-            this._errors.set(key,value);
+        if (!this[symbolErrors].has(key))
+            this[symbolErrors].set(key,value);
     }
 
     getError(key) {
-        return this._errors.has(key) ? this._errors.get(key) : 'Key not found';
+        return this[symbolErrors].has(key) ? this[symbolErrors].get(key) : 'Key not found';
     }
 
     getAllErrors() {
-        const result = Array.from(this._errors);
+        const result = Array.from(this[symbolErrors]);
         let objects = result.reduce(function(acc, cur, i) {
             acc[i] = { error: cur[0], message: cur[1] };
             return acc;
@@ -25,7 +30,7 @@ class Notification {
     }
 
     countErrors() {
-        return this._errors.size;
+        return this[symbolErrors].size;
     }
 }
 

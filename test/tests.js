@@ -1,4 +1,4 @@
-import Notification from '../src/notification';
+import Notification from '../src/Notification';
 import test from 'tape';
 
 const notify = new Notification();
