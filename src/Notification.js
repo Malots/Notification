@@ -5,6 +5,7 @@ let symbolErrors = Symbol('errors');
 class Notification {
     constructor() {
         this[symbolErrors] = new Map();
+        throw new Error('This class cannot be instanciate');
     }
 
     addError(key,value) {
