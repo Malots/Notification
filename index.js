@@ -14,8 +14,10 @@ var Notification = function () {
     function Notification() {
         _classCallCheck(this, Notification);
 
+        if (this.constructor === Notification) {
+            throw new Error('This class cannot be instanciate');
+        }
         this[symbolErrors] = new Map();
-        throw new Error('This class cannot be instanciate');
     }
 
     _createClass(Notification, [{
